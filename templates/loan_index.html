@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML --> 
+      <form action="{{ url_for('predict')}}"method="post"> 
+    <!-- <form action="http://127.0.0.1:5000/" method="post"> -->
+        Select your Gender:
+        <input type="radio" name="gender" value="male" checked> Male
+        <input type="radio" name="gender" value="female"> Female<br>
+        Are you Married:
+        <input type="radio" name="married" value="yes" checked> Yes
+        <input type="radio" name="married" value="no"> No<br>
+        Dependents you have:
+        <input type="radio" name="dependents" value= 1  checked> One
+        <input type="radio" name="dependents" value= 2> Two
+        <input type="radio" name="dependents" value= 3> Three<br>
+        Education:
+        <input type="radio" name="education" value="graduate" checked> Graduate
+        <input type="radio" name="education" value="not gredute"> Not Graduate<br>
+        Are you Self Employed:
+        <input type="radio" name="selfemployed" value="yes" checked> Yes
+        <input type="radio" name="selfemployed" value="no"> No<br>
+        Applicant Income:
+    	<input type="text" name="applicantincome" placeholder="ApplicantIncome" required="required" /> <br>
+    	Coapplicant Income:
+    	<input type="text" name="coapplicantincome" placeholder="CoapplicantIncome" required="required" /> <br>
+        Loan Amount:
+        <input type="text" name="loanamount" placeholder="LoanAmount" required="required" /> <br>
+		Loan_Amount_Term:
+        <input type="radio" name="loanamountterm" value= 120  checked> 120
+        <input type="radio" name="loanamountterm" value= 240> 240
+        <input type="radio" name="loanamountterm" value= 360> 360<br>
+        Credit_History:
+        <input type="radio" name="credithistory" value= 1  checked> One
+        <input type="radio" name="credithistory" value= 0> None
+		Property_Area:
+        <input type="radio" name="propertyarea" value= "urban"  checked> Urban
+        <input type="radio" name="propertyarea" value= "semiurban"> Semiurban <br>
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
