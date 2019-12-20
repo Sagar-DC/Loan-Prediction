@@ -3,40 +3,31 @@
 <!DOCTYPE html>
 <html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
-<head>
-  <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
-  
-</head>
+
 
 <body>
- <div class="login">
+ 
 	<h1>Predict Salary Analysis</h1>
 
      <!-- Main Input For Receiving Query to our ML --> 
       <form action="{{ url_for('predict')}}"method="post"> 
     <!-- <form action="http://127.0.0.1:5000/" method="post"> -->
         Select your Gender:
-        <input type="radio" name="gender" value="male" checked> Male
-        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value=1 checked> Male
+        <input type="radio" name="gender" value=0> Female<br>
         Are you Married:
-        <input type="radio" name="married" value="yes" checked> Yes
-        <input type="radio" name="married" value="no"> No<br>
+        <input type="radio" name="married" value=1 checked> Yes
+        <input type="radio" name="married" value=0> No<br>
         Dependents you have:
         <input type="radio" name="dependents" value= 1  checked> One
         <input type="radio" name="dependents" value= 2> Two
         <input type="radio" name="dependents" value= 3> Three<br>
         Education:
-        <input type="radio" name="education" value="graduate" checked> Graduate
-        <input type="radio" name="education" value="not gredute"> Not Graduate<br>
+        <input type="radio" name="education" value=1 checked> Graduate
+        <input type="radio" name="education" value=0> Not Graduate<br>
         Are you Self Employed:
-        <input type="radio" name="selfemployed" value="yes" checked> Yes
-        <input type="radio" name="selfemployed" value="no"> No<br>
+        <input type="radio" name="selfemployed" value=1 checked> Yes
+        <input type="radio" name="selfemployed" value=0> No<br>
         Applicant Income:
     	<input type="text" name="applicantincome" placeholder="ApplicantIncome" required="required" /> <br>
     	Coapplicant Income:
@@ -49,10 +40,10 @@
         <input type="radio" name="loanamountterm" value= 360> 360<br>
         Credit_History:
         <input type="radio" name="credithistory" value= 1  checked> One
-        <input type="radio" name="credithistory" value= 0> None
+        <input type="radio" name="credithistory" value= 0> None <br>
 		Property_Area:
-        <input type="radio" name="propertyarea" value= "urban"  checked> Urban
-        <input type="radio" name="propertyarea" value= "semiurban"> Semiurban <br>
+        <input type="radio" name="propertyarea" value= 1  checked> Urban
+        <input type="radio" name="propertyarea" value= 0> Semiurban <br>
         
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
